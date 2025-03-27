@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Readme.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -190,6 +191,8 @@ fabric.properties
 !.idea/runConfigurations
 
 ### Java ###
+=======
+>>>>>>> 6a38ac96b1941db705b4526d5188ddda535e73d5
 # Compiled class file
 *.class
 
@@ -214,6 +217,7 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+<<<<<<< HEAD
 
 ### Maven ###
 target/
@@ -235,3 +239,5 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,intellij+all,eclipse
+=======
+>>>>>>> 6a38ac96b1941db705b4526d5188ddda535e73d5
