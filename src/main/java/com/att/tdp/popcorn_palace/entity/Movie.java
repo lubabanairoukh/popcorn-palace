@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.att.tdp.popcorn_palace.dto.MovieRequestDTO;
+
 
 @Getter
 @Setter
@@ -21,4 +23,16 @@ public class Movie {
     private int duration;
     private double rating;
     private int releaseYear;
+
+    public Movie(String title, String genre, int duration, double rating, int releaseYear) {
+        this.title = title;
+        this.genre = genre;
+        this.duration = duration;
+        this.rating = rating;
+        this.releaseYear = releaseYear;
+    }
+
+
+
+
 }

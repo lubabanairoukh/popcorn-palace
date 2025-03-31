@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.att.tdp.popcorn_palace.entity.Movie;
 
 @Getter
 @Setter
@@ -18,4 +19,7 @@ public class MovieResponseDTO {
     private int duration;
     private double rating;
     private int releaseYear;
+
+
+
 }
