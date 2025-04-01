@@ -16,16 +16,18 @@ public class Showtime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
-    private Long movieId;
+
     private Double price;
     private String theater;
     private OffsetDateTime startTime;
     private OffsetDateTime endTime;
 
+    @ManyToOne
+    @JoinColumn(name = "movie_id", nullable = false)
+    private Movie movie;
 
-
-    public Showtime(Long movie,  Double price, String theater, OffsetDateTime startTime, OffsetDateTime endTime) {
-        this.movieId = movie;
+    public Showtime(Movie movie,  Double price, String theater, OffsetDateTime startTime, OffsetDateTime endTime) {
+        this.movie = movie;
         this.price = price;
         this.theater = theater;
         this.startTime = startTime;

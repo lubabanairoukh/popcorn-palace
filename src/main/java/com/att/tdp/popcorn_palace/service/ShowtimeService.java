@@ -37,36 +37,49 @@ public class ShowtimeService {
 
     public ShowtimeResponseDTO addShowtime(ShowtimeRequestDTO dto) {
         validateShowtimeDurationMatchesMovie(dto);
-
         checkForOverlap(dto.getTheater(), dto.getStartTime(), dto.getEndTime(), null);
 
-        Showtime showtime = ShowtimeMapper.toEntity(dto);
-        Showtime saved = showtimeRepository.save(showtime);
+        Movie movie = movieService.findMovieByIdOrThrow(dto.getMovieId());
+        Showtime showtime = ShowtimeMapper.toEntity(dto, movie);
 
+        linkShowtimeToMovie(showtime, movie);
+
+        Showtime saved = showtimeRepository.save(showtime);
         return ShowtimeMapper.toDTO(saved);
     }
+
 
     public void updateShowtime(Long id, ShowtimeRequestDTO dto) {
         Showtime existingShowtime = showtimeRepository.findById(id)
                 .orElseThrow(() -> new ShowtimeNotFoundException(id));
+
         validateShowtimeDurationMatchesMovie(dto);
-
-
-
         checkForOverlap(dto.getTheater(), dto.getStartTime(), dto.getEndTime(), id);
 
-        ShowtimeMapper.updateEntity(existingShowtime, dto);
+        Movie movie = movieService.findMovieByIdOrThrow(dto.getMovieId());
+
+        ShowtimeMapper.updateEntity(existingShowtime, dto, movie);
+
+        if (!movie.getShowtimes().contains(existingShowtime)) {
+            linkShowtimeToMovie(existingShowtime, movie);
+        }
+
 
         showtimeRepository.save(existingShowtime);
     }
 
     public void deleteShowtime(Long id) {
-        if (!showtimeRepository.existsById(id)) {
-            throw new ShowtimeNotFoundException(id);
+        Showtime showtime = showtimeRepository.findById(id)
+                .orElseThrow(() -> new ShowtimeNotFoundException(id));
+
+        Movie movie = showtime.getMovie();
+        if (movie != null) {
+            movie.getShowtimes().remove(showtime);
         }
 
-        showtimeRepository.deleteById(id);
+        showtimeRepository.delete(showtime);
     }
+
 
 
     private void checkForOverlap(String theater, OffsetDateTime startTime, OffsetDateTime endTime, Long excludeId) {
@@ -90,6 +103,11 @@ public class ShowtimeService {
         if (actualMinutes != expectedMinutes) {
             throw new ShowtimeDurationMismatchException("Showtime duration does not match the movie duration (" + expectedMinutes + " minutes).");
         }
+    }
+
+    private void linkShowtimeToMovie(Showtime showtime, Movie movie) {
+        showtime.setMovie(movie);
+        movie.getShowtimes().add(showtime);
     }
 
 

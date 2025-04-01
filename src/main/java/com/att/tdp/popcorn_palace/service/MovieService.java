@@ -40,7 +40,7 @@ public class MovieService {
     @Transactional
     public void deleteMovie(String title) {
         Movie movie = findMovieByTitleOrThrow(title);
-        movieRepository.deleteByTitle(title);
+        movieRepository.delete(movie);
     }
 
     public void updateMovie(String title, MovieRequestDTO movieRequestDTO) {

@@ -1,8 +1,6 @@
 package com.att.tdp.popcorn_palace.controller;
 
 
-import com.att.tdp.popcorn_palace.dto.MovieRequestDTO;
-import com.att.tdp.popcorn_palace.dto.MovieResponseDTO;
 import com.att.tdp.popcorn_palace.dto.ShowtimeRequestDTO;
 import com.att.tdp.popcorn_palace.dto.ShowtimeResponseDTO;
 
@@ -11,7 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/showtimes")
@@ -28,6 +26,7 @@ public class ShowtimeController {
     public ResponseEntity<ShowtimeResponseDTO> getShowtimeById(@PathVariable Long showtimeId) {
         return ResponseEntity.ok(showtimeService.getShowtimeById(showtimeId));
     }
+
 
     @PostMapping
     public ResponseEntity<ShowtimeResponseDTO> addShowtime(@Valid @RequestBody ShowtimeRequestDTO dto) {

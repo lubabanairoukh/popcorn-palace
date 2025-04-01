@@ -2,15 +2,16 @@ package com.att.tdp.popcorn_palace.mapper;
 
 import com.att.tdp.popcorn_palace.dto.ShowtimeRequestDTO;
 import com.att.tdp.popcorn_palace.dto.ShowtimeResponseDTO;
+import com.att.tdp.popcorn_palace.entity.Movie;
 import com.att.tdp.popcorn_palace.entity.Showtime;
 
 import java.util.List;
 
 public class ShowtimeMapper {
 
-    public static Showtime toEntity(ShowtimeRequestDTO dto){
+    public static Showtime toEntity(ShowtimeRequestDTO dto, Movie movie){
         return new Showtime(
-                dto.getMovieId(),
+                movie,
                 dto.getPrice(),
                 dto.getTheater(),
                 dto.getStartTime(),
@@ -21,7 +22,7 @@ public class ShowtimeMapper {
     public static ShowtimeResponseDTO toDTO(Showtime entity){
         return new ShowtimeResponseDTO(
                 entity.getId(),
-                entity.getMovieId(),
+                entity.getMovie().getMovieId(),
                 entity.getPrice(),
                 entity.getTheater(),
                 entity.getStartTime(),
@@ -35,8 +36,8 @@ public class ShowtimeMapper {
                 .toList();
     }
 
-    public static void updateEntity(Showtime entity, ShowtimeRequestDTO dto) {
-        entity.setMovieId(dto.getMovieId());
+    public static void updateEntity(Showtime entity, ShowtimeRequestDTO dto, Movie movie) {
+        entity.setMovie(movie);
         entity.setPrice(dto.getPrice());
         entity.setTheater(dto.getTheater());
         entity.setStartTime(dto.getStartTime());
