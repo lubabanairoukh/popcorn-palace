@@ -11,7 +11,7 @@ import java.time.OffsetDateTime;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "Showtime")
+@Table(name = "showtimes")
 public class Showtime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

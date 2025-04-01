@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 public class ShowtimeResponseDTO {
     private  Long id;
     private Long movieId;
-    private Double price;
+    private double price;
     private String theater;
     private OffsetDateTime startTime;
     private OffsetDateTime endTime;

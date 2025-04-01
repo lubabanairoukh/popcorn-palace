@@ -62,4 +62,9 @@ public class MovieService {
     }
 
 
+    public Movie findMovieByIdOrThrow(Long id) {
+        return movieRepository.findById(id)
+                .orElseThrow(() -> new MovieNotFoundException("Movie with ID " + id + " not found."));
+    }
+
 }

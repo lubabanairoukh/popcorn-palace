@@ -36,5 +36,26 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error); // 409
     }
 
+    @ExceptionHandler(ShowtimeNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleShowtimeNotFound(ShowtimeNotFoundException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+    @ExceptionHandler(ShowtimeOverlapException.class)
+    public ResponseEntity<Map<String, String>> handleShowtimeOverlap(ShowtimeOverlapException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error); // 409
+    }
+
+
+    @ExceptionHandler(ShowtimeDurationMismatchException.class)
+    public ResponseEntity<Map<String, String>> handleDurationMismatch(ShowtimeDurationMismatchException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return ResponseEntity.badRequest().body(error); // HTTP 400
+    }
 
 }

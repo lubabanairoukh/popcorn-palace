@@ -21,7 +21,7 @@ public class ShowtimeRequestDTO  {
 
     @NotNull(message = "Price is required")
     @Positive(message = "Price must be a positive number")
-    private int price;
+    private double price;
 
     @NotNull(message = "Theater name is required.")
     private String theater;
