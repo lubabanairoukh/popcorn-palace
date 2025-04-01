@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.util.List;
+import java.util.ArrayList;
 import java.time.OffsetDateTime;
 
 @Getter
@@ -25,6 +26,11 @@ public class Showtime {
     @ManyToOne
     @JoinColumn(name = "movie_id", nullable = false)
     private Movie movie;
+
+
+    @OneToMany(mappedBy = "showtime", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings = new ArrayList<>();
+
 
     public Showtime(Movie movie,  Double price, String theater, OffsetDateTime startTime, OffsetDateTime endTime) {
         this.movie = movie;
