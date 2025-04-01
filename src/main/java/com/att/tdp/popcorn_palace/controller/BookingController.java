@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/bookings")
 public class BookingController {
@@ -16,6 +17,7 @@ public class BookingController {
     public BookingController(BookingService bookingService) {
         this.bookingService = bookingService;
     }
+
 
     @PostMapping
     public ResponseEntity<BookingResponseDTO> bookTicket(@RequestBody @Valid BookingRequestDTO dto) {
