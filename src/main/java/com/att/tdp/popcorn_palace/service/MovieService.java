@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+// Manages movie operations like adding, updating, deleting, and fetching from the database
 @Service
 public class MovieService {
 

@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
+
+// This gives back the booking ID after user books a ticket
 @Getter
 @Setter
 @NoArgsConstructor

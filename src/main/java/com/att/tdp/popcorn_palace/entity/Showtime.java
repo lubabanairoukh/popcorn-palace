@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.time.OffsetDateTime;
 
+// Represents a showtime entity with details like price, theater, and schedule, linked to a movie and its bookings
 @Getter
 @Setter
 @Entity

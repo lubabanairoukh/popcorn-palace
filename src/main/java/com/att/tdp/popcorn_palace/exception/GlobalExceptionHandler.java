@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.HashMap;
 import java.util.Map;
-
+// Handles global exceptions for movies, showtimes, and validation errors
 @ControllerAdvice
 public class GlobalExceptionHandler {
 

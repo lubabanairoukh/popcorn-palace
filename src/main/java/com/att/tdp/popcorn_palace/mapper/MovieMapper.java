@@ -6,6 +6,8 @@ import com.att.tdp.popcorn_palace.entity.Movie;
 
 import java.util.List;
 
+
+// Converts movie details between DTOs and the Movie entity, and updates movie data
 public class MovieMapper {
     public static Movie toEntity(MovieRequestDTO dto){
         return new Movie(

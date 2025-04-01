@@ -9,7 +9,7 @@ import com.att.tdp.popcorn_palace.dto.MovieRequestDTO;
 
 import java.util.List;
 
-
+// Represents a movie record in the database, including its showtimes
 @Getter
 @Setter
 @Entity

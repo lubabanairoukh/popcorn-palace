@@ -1,12 +1,12 @@
 package com.att.tdp.popcorn_palace.dto;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import com.att.tdp.popcorn_palace.entity.Movie;
 
+// This returns the movie details back to the user
 @Getter
 @Setter
 @NoArgsConstructor

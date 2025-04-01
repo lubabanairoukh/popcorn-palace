@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-
+// This controller manages requests related to showtimes, like creating, updating, deleting, and fetching showtime details
 @RestController
 @RequestMapping("/showtimes")
 public class ShowtimeController {

@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Max;
 
 import java.time.LocalDate;
 
-
+// This takes the movie info from the user like title, genre, duration, rating, and year
 @Getter
 @Setter
 @NoArgsConstructor

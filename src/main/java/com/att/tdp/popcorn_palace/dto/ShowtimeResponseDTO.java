@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.time.OffsetDateTime;
 
+// This provides showtime details including ID, movie ID, price, theater, and start/end times
 @Getter
 @Setter
 @NoArgsConstructor

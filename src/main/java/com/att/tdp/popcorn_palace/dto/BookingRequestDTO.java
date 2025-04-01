@@ -11,7 +11,7 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-
+// Holds the details needed from the user to book a ticket: seat number, user ID, and showtime ID
 @Getter
 @Setter
 @NoArgsConstructor

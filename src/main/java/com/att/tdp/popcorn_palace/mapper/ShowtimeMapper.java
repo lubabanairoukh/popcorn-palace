@@ -7,6 +7,8 @@ import com.att.tdp.popcorn_palace.entity.Showtime;
 
 import java.util.List;
 
+
+// Converts showtime data between DTOs and the Showtime entity, and handles updates
 public class ShowtimeMapper {
 
     public static Showtime toEntity(ShowtimeRequestDTO dto, Movie movie){

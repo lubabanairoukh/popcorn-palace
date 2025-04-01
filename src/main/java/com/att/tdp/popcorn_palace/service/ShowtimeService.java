@@ -17,6 +17,8 @@ import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.List;
 
+
+// Manages showtime operations such as adding, updating, overlapping checks, and duration matching
 @Service
 public class ShowtimeService {
     private final ShowtimeRepository showtimeRepository;

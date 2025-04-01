@@ -7,6 +7,7 @@ import com.att.tdp.popcorn_palace.entity.Showtime;
 
 import java.util.UUID;
 
+// Converts booking data between the DTO and the Booking entity
 public class BookingMapper {
 
 

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// This controller handles movie-related requests like adding, updating, deleting, and fetching movies
+
 @RestController
 @RequestMapping("/movies")
 public class MovieController {

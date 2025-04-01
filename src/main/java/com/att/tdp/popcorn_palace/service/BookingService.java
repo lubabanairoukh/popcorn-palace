@@ -11,6 +11,8 @@ import com.att.tdp.popcorn_palace.repository.BookingRepository;
 import com.att.tdp.popcorn_palace.repository.ShowtimeRepository;
 import org.springframework.stereotype.Service;
 
+
+// This service handles ticket bookings and checks if a seat is already taken
 @Service
 public class BookingService {
 

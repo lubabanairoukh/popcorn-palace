@@ -10,6 +10,8 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+
+// Represents a booking record in the database with seat, user, and showtime info
 @Getter
 @Setter
 @NoArgsConstructor
